@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Zoologico.application.Models.AnimalModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.anim_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anim_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anim_edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anim_origen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anim_tipo_alimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anim_cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gene_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.espe_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.esta_titulo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.anim_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anim_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anim_edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anim_origen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anim_tipo_alimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anim_cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gene_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.espe_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.esta_titulo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.anim_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.anim_id })
+        </td>
+    </tr>
+}
+
+</table>
